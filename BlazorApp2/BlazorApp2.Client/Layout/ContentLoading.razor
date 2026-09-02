@@ -1,0 +1,21 @@
+﻿@if (!RendererInfo.IsInteractive)
+{
+    <!-- OPTIONAL ...
+    <HeadContent>
+        <style>
+            ...
+        </style>
+    </HeadContent>
+    -->
+    <progress id="loadingIndicator" aria-label="Content loading…"></progress>
+}
+else
+{
+    // dodá to, co je v uvnitř té komponenty, pokud je stránka interaktivní
+    @ChildContent
+}
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}
